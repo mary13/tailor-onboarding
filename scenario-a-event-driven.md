@@ -664,6 +664,35 @@ Sarah has a gala in 10 weeks. She's been browsing the dress catalog, found style
 - **Consistency:** Reuse patterns across paths
 - **Flexibility:** Edit options, save for later, multiple delivery speeds
 
+### Critical Design Decisions
+
+**Payment Screen Separation (DEC-009)**
+- **Decision:** Split payment from shipping into separate screens
+- **Rationale:** Better focus on each task, reduced cognitive load, clearer action hierarchy
+- **Impact:** Added one screen to flow, improved expected completion rate
+
+**Button Hierarchy on Swatch Confirmation (DEC-011)**
+- **Decision:** Make "Done" primary button, demote "Continue to order now" to small link
+- **Rationale:** Primary action should complete current task (swatches). Continuing to order is secondary.
+- **Impact:** Clearer task completion, more intentional conversions to full order
+
+**5% Swatch Discount (DEC-008)**
+- **Decision:** Offer 5% discount on dress order for users who ordered swatches
+- **Rationale:** Rewards engagement, acknowledges commitment, encourages order completion
+- **Impact:** $42.50 discount on $850 order, expected increase in conversion rate
+
+**Session Persistence (DEC-010)**
+- **Decision:** Return flow pre-fills selections and resumes at fabric choice
+- **Rationale:** Respects user's previous work, reduces friction, creates seamless experience
+- **Impact:** Better UX, increased technical complexity for session management
+
+**Consistent Navigation (DEC-012)**
+- **Decision:** Position "Back to all scenarios" link at bottom of page, outside white box, left-aligned
+- **Rationale:** Consistency improves usability, bottom position doesn't compete with primary actions
+- **Impact:** Applied across all 15 prototype screens
+
+For complete decision database with context, alternatives, and consequences, see `decisions.json` and run `./query-decisions.sh`.
+
 ### Discarded Ideas
 
 *(To be added as we continue with other scenarios)*
@@ -709,6 +738,25 @@ All HTML files are located in `/Users/kathleenmoynahan/Research/Tailor/Scenario 
   - Form field validation (HTML5)
 
 ---
+
+## Decision Database
+
+For a queryable database of all 15 design decisions made during this scenario:
+- See `decisions.json` for structured decision records
+- Run `./query-decisions.sh` for queries like:
+  - `count progressive-disclosure` - How many times pattern used
+  - `why progressive-disclosure` - Rationale for pattern
+  - `flow swatch-detour` - All decisions affecting this flow
+  - `show DEC-009` - Full details of payment screen split decision
+- See `DECISIONS-README.md` for complete documentation
+
+Each decision includes:
+- Context and rationale
+- Alternatives considered
+- Consequences and trade-offs
+- Design patterns applied
+- Screens affected
+- Categorization tags
 
 ## Next Scenarios
 

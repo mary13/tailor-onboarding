@@ -40,6 +40,10 @@ Tailor/
 ├── index.html                          # Landing page - START HERE
 ├── README.md                           # This file
 ├── scenario-a-event-driven.md          # Full design documentation
+├── session-log.md                      # Session log with project history
+├── decisions.json                      # Queryable design decisions database
+├── query-decisions.sh                  # Query tool for decisions
+├── DECISIONS-README.md                 # Decision database documentation
 ├── Scenario A/                         # Scenario A prototype
 │   ├── index.html                      # Scenario A entry point
 │   ├── path-1-step-2.html             # Swatch selection
@@ -81,6 +85,14 @@ Tailor/
      - Reusable patterns
      - Design decisions
 
+4. **Query design decisions:**
+   - Run `./query-decisions.sh` to explore 15 documented design decisions
+   - Examples:
+     - `./query-decisions.sh count progressive-disclosure`
+     - `./query-decisions.sh why progressive-disclosure`
+     - `./query-decisions.sh flow swatch-detour`
+   - See `DECISIONS-README.md` for full documentation
+
 ### GitHub Pages (Live Demo)
 
 Visit the live prototype at:
@@ -106,6 +118,41 @@ No download required - explore the prototype directly in your browser.
 4. **Measurements Drawer:** Slides from right with overlay
 5. **Save for Later:** Preserves session at payment step
 6. **Confirmation Flow:** Success icon, timeline, support contact
+
+## Design Decision Database
+
+This project includes a queryable database of all design decisions made during development.
+
+**15 decisions documented** covering:
+- Progressive disclosure strategy
+- Two-path flow structure
+- Payment screen separation
+- Session persistence
+- Button hierarchy
+- Navigation positioning
+- And more...
+
+Each decision includes context, rationale, alternatives considered, consequences, design patterns used, and affected screens.
+
+**Query the database:**
+```bash
+./query-decisions.sh count progressive-disclosure    # Count pattern usage
+./query-decisions.sh why progressive-disclosure      # Show rationale
+./query-decisions.sh flow swatch-detour             # Decisions by flow
+./query-decisions.sh search payment                  # Keyword search
+./query-decisions.sh stats                          # Summary statistics
+```
+
+See `DECISIONS-README.md` for complete documentation.
+
+## Session Log
+
+`session-log.md` contains a comprehensive record of the project development process, including:
+- Pair Design methodology and agreements
+- All design decisions and iterations
+- Implementation details
+- Fixes and refinements
+- Git workflow
 
 ## Next Steps
 
