@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bespoke Dress Tailor - Onboarding Flow Design</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen">
+    <div class="max-w-4xl mx-auto p-8 py-16">
+        <!-- Header -->
+        <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+            <h1 class="text-3xl font-bold text-slate-900 mb-3">
+                Bespoke Dress Tailor
+            </h1>
+            <p class="text-xl text-slate-600 mb-4">
+                Onboarding Flow Design Experiment
+            </p>
+            <p class="text-slate-600 mb-4">
+                An exploration of onboarding flows for an online bespoke dress shop, designed using <strong>Pair Design methodology</strong> (Noessel & Anderson). Each scenario explores different customer personas and their unique needs.
+            </p>
+            <div class="flex gap-4 text-sm">
+                <a href="README.md" class="text-slate-600 hover:text-slate-900 underline">Read Documentation</a>
+                <a href="https://github.com/mary13/tailor-onboarding" target="_blank" class="text-slate-600 hover:text-slate-900 underline">View on GitHub</a>
+            </div>
+        </div>
+
+        <!-- Scenarios -->
+        <div class="space-y-4">
+            <h2 class="text-2xl font-semibold text-slate-900 mb-4">Scenarios</h2>
+
+            <!-- Scenario A - Complete -->
+            <a href="Scenario A/index.html" class="block bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
+                <div class="flex items-start justify-between mb-3">
+                    <div>
+                        <h3 class="text-xl font-semibold text-slate-900 mb-2">
+                            Scenario A: Event-Driven First-Timer
+                        </h3>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800">
+                            ✓ Complete - 16 screens
+                        </span>
+                    </div>
+                    <svg class="w-6 h-6 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </div>
+                <p class="text-slate-600 mb-3">
+                    Sarah needs a custom dress for a gala in 10 weeks. She's browsing the catalog and ready to order.
+                </p>
+                <div class="text-sm text-slate-500">
+                    <p class="mb-1"><strong>Key tension:</strong> Urgency (deadline) vs. Confidence (measurements, fabric choice)</p>
+                    <p><strong>Paths:</strong> Swatch detour (10 screens) • Order now (6 screens)</p>
+                </div>
+            </a>
+
+            <!-- Scenario B - Future -->
+            <div class="bg-white rounded-lg shadow p-6 opacity-60">
+                <div class="flex items-start justify-between mb-3">
+                    <div>
+                        <h3 class="text-xl font-semibold text-slate-900 mb-2">
+                            Scenario B: Exploratory First-Timer
+                        </h3>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-200 text-slate-600">
+                            Coming soon
+                        </span>
+                    </div>
+                </div>
+                <p class="text-slate-600 mb-3">
+                    Customer is curious about bespoke but hasn't committed. Browsing to understand process, pricing, timeline.
+                </p>
+                <div class="text-sm text-slate-500">
+                    <p><strong>Key tension:</strong> Interest vs. Commitment • Exploration vs. Decision</p>
+                </div>
+            </div>
+
+            <!-- Scenario C - Future -->
+            <div class="bg-white rounded-lg shadow p-6 opacity-60">
+                <div class="flex items-start justify-between mb-3">
+                    <div>
+                        <h3 class="text-xl font-semibold text-slate-900 mb-2">
+                            Scenario C: Measurement-Anxious First-Timer
+                        </h3>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-200 text-slate-600">
+                            Coming soon
+                        </span>
+                    </div>
+                </div>
+                <p class="text-slate-600 mb-3">
+                    Wants to order but intimidated by self-measurement. Needs significant guidance and confidence building.
+                </p>
+                <div class="text-sm text-slate-500">
+                    <p><strong>Key tension:</strong> Desire (custom dress) vs. Fear (getting it wrong)</p>
+                </div>
+            </div>
+
+            <!-- Scenario D - Future -->
+            <div class="bg-white rounded-lg shadow p-6 opacity-60">
+                <div class="flex items-start justify-between mb-3">
+                    <div>
+                        <h3 class="text-xl font-semibold text-slate-900 mb-2">
+                            Scenario D: Returning Customer
+                        </h3>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-200 text-slate-600">
+                            Coming soon
+                        </span>
+                    </div>
+                </div>
+                <p class="text-slate-600 mb-3">
+                    Has measurements on file from previous order. Wants quick reorder path with minimal friction.
+                </p>
+                <div class="text-sm text-slate-500">
+                    <p><strong>Key tension:</strong> Efficiency vs. Verification • Speed vs. Accuracy</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-12 pt-8 border-t border-slate-200">
+            <div class="text-sm text-slate-600 space-y-2">
+                <p><strong>Design Methodology:</strong> Pair Design (Noessel & Anderson)</p>
+                <p><strong>Designed:</strong> April 2026</p>
+                <p><strong>Status:</strong> Scenario A complete and ready for user testing</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
