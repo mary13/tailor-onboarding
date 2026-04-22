@@ -674,7 +674,10 @@ Sarah has a gala in 10 weeks. She's been browsing the dress catalog, found style
 
 All HTML files are located in `/Users/kathleenmoynahan/Research/Tailor/Scenario A/`
 
-**Start here:** `index.html`
+**To access this scenario:**
+- From project root: Open `index.html` (landing page) → Click "Scenario A"
+- Direct access: Open `Scenario A/index.html`
+- Live demo: https://mary13.github.io/tailor-onboarding/
 
 ### Path 1: Swatch Detour + Return (10 screens)
 1. `index.html` - Swatch decision

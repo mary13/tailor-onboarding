@@ -37,38 +37,56 @@ Sarah needs a custom dress for a gala in 10 weeks. She's browsing the catalog an
 
 ```
 Tailor/
+├── index.html                          # Landing page - START HERE
 ├── README.md                           # This file
 ├── scenario-a-event-driven.md          # Full design documentation
-└── Scenario A/                         # Clickable prototype
-    ├── index.html                      # Start here
-    ├── path-1-step-2.html             # Swatch selection
-    ├── path-1-step-3.html             # Shipping info
-    ├── path-1-step-3-payment.html     # Payment for swatches
-    ├── path-1-step-4.html             # Swatch confirmation
-    ├── path-1-return-step-1.html      # Welcome back
-    ├── path-1-return-step-2.html      # Fabric from swatches
-    ├── path-1-return-step-3.html      # Measurements
-    ├── path-1-return-step-4.html      # Payment (5% off)
-    ├── path-1-return-step-5.html      # Final confirmation
-    ├── path-2-step-1.html             # Fabric selection (all)
-    ├── path-2-step-2.html             # Measurements
-    ├── path-2-step-3.html             # Contact/shipping
-    ├── path-2-step-4.html             # Payment (full price)
-    └── path-2-step-5.html             # Final confirmation
+├── Scenario A/                         # Scenario A prototype
+│   ├── index.html                      # Scenario A entry point
+│   ├── path-1-step-2.html             # Swatch selection
+│   ├── path-1-step-3.html             # Shipping info
+│   ├── path-1-step-3-payment.html     # Payment for swatches
+│   ├── path-1-step-4.html             # Swatch confirmation
+│   ├── path-1-return-step-1.html      # Welcome back
+│   ├── path-1-return-step-2.html      # Fabric from swatches
+│   ├── path-1-return-step-3.html      # Measurements
+│   ├── path-1-return-step-4.html      # Payment (5% off)
+│   ├── path-1-return-step-5.html      # Final confirmation
+│   ├── path-2-step-1.html             # Fabric selection (all)
+│   ├── path-2-step-2.html             # Measurements
+│   ├── path-2-step-3.html             # Contact/shipping
+│   ├── path-2-step-4.html             # Payment (full price)
+│   └── path-2-step-5.html             # Final confirmation
+├── Scenario B/                         # Coming soon
+├── Scenario C/                         # Coming soon
+└── Scenario D/                         # Coming soon
 ```
 
 ## How to Use
 
-1. **View the prototype:**
-   - Open `Scenario A/index.html` in a web browser
-   - Click through Path 1 (swatches) or Path 2 (order now)
+### Local Viewing
 
-2. **Read the design rationale:**
+1. **Start at the landing page:**
+   - Open `index.html` in a web browser
+   - Browse all scenarios (A is complete, B/C/D coming soon)
+   - Click into Scenario A to explore the prototype
+
+2. **Explore Scenario A:**
+   - Two complete paths: Swatch detour (10 screens) or Order now (6 screens)
+   - Click through the interactive prototype
+
+3. **Read the design rationale:**
    - See `scenario-a-event-driven.md` for:
      - See-think-do scenarios
      - Wireframes with rationale
      - Reusable patterns
      - Design decisions
+
+### GitHub Pages (Live Demo)
+
+Visit the live prototype at:
+**https://mary13.github.io/tailor-onboarding/**
+
+No download required - explore the prototype directly in your browser.
 
 ## Technical Details
 
