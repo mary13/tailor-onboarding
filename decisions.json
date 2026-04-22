@@ -1,0 +1,515 @@
+{
+  "project": "Tailor Onboarding Flow",
+  "scenario": "Scenario A: Event-Driven First-Timer",
+  "decisions": [
+    {
+      "id": "DEC-001",
+      "date": "2026-04-22",
+      "title": "Add swatch delivery option",
+      "context": "Initial design had users choosing fabric directly from images. User suggested adding physical swatch samples.",
+      "decision": "Add overnight swatch delivery option with multiple shipping tiers",
+      "rationale": "Some users want to see/feel fabric before committing to $850 purchase. Physical samples reduce uncertainty and returns.",
+      "alternatives": [
+        "Fabric images only",
+        "Free swatch program",
+        "Single shipping speed"
+      ],
+      "consequences": "Created two-path flow structure. Added 4 screens to swatch path. Increased complexity but reduced purchase anxiety.",
+      "design_patterns": [
+        "progressive-disclosure",
+        "risk-reduction"
+      ],
+      "user_flows": [
+        "swatch-detour"
+      ],
+      "screens_affected": [
+        "index.html",
+        "path-1-step-2.html",
+        "path-1-step-3.html",
+        "path-1-step-3-payment.html",
+        "path-1-step-4.html"
+      ],
+      "tags": [
+        "user-request",
+        "trust-building",
+        "purchase-confidence"
+      ]
+    },
+    {
+      "id": "DEC-002",
+      "date": "2026-04-22",
+      "title": "Create two-path flow structure",
+      "context": "After adding swatches, needed to accommodate both users who want samples and those ready to order immediately.",
+      "decision": "Implement two complete paths: swatch detour (10 screens) and order now (6 screens)",
+      "rationale": "Respects different user preferences and confidence levels. Doesn't force committed users through unnecessary steps.",
+      "alternatives": [
+        "Single path with optional swatch step",
+        "Swatches only, no direct order",
+        "Progressive enhancement on single path"
+      ],
+      "consequences": "Doubled screen count. Requires session persistence. More testing surface. Better user satisfaction expected.",
+      "design_patterns": [
+        "adaptive-pathways",
+        "user-choice"
+      ],
+      "user_flows": [
+        "swatch-detour",
+        "order-now"
+      ],
+      "screens_affected": [
+        "index.html",
+        "path-1-step-2.html",
+        "path-1-step-3.html",
+        "path-1-step-3-payment.html",
+        "path-1-step-4.html",
+        "path-1-return-step-1.html",
+        "path-1-return-step-2.html",
+        "path-1-return-step-3.html",
+        "path-1-return-step-4.html",
+        "path-1-return-step-5.html",
+        "path-2-step-1.html",
+        "path-2-step-2.html",
+        "path-2-step-3.html",
+        "path-2-step-4.html",
+        "path-2-step-5.html"
+      ],
+      "tags": [
+        "information-architecture",
+        "user-choice",
+        "flow-structure"
+      ]
+    },
+    {
+      "id": "DEC-003",
+      "date": "2026-04-22",
+      "title": "Collect choices before personal information",
+      "context": "Deciding what order to collect information: product choices vs personal data.",
+      "decision": "Have users choose fabric/style before requesting email, measurements, or payment info",
+      "rationale": "Progressive disclosure builds trust. Lower commitment actions first. Users feel in control. Reduces abandonment.",
+      "alternatives": [
+        "Account creation first",
+        "Email gate at entry",
+        "Personal info upfront for customization"
+      ],
+      "consequences": "Cannot email abandoned carts early. Slight risk of users abandoning after choices. Improved trust and completion rate expected.",
+      "design_patterns": [
+        "progressive-disclosure",
+        "trust-building",
+        "low-commitment-first"
+      ],
+      "user_flows": [
+        "swatch-detour",
+        "order-now"
+      ],
+      "screens_affected": [
+        "index.html",
+        "path-1-step-2.html",
+        "path-2-step-1.html"
+      ],
+      "tags": [
+        "information-architecture",
+        "privacy",
+        "conversion-optimization"
+      ]
+    },
+    {
+      "id": "DEC-004",
+      "date": "2026-04-22",
+      "title": "Capture email after initial choices",
+      "context": "User suggested: 'Let's try it with getting the email after she makes some choices'",
+      "decision": "Request email after fabric/swatch selection but before shipping address",
+      "rationale": "User has made meaningful choices, showing purchase intent. Enables abandoned cart recovery. Still early enough to feel non-invasive.",
+      "alternatives": [
+        "Email at entry",
+        "Email only at payment",
+        "Optional email throughout"
+      ],
+      "consequences": "Enables session recovery. Allows abandoned cart emails. Balances conversion and marketing needs.",
+      "design_patterns": [
+        "progressive-disclosure",
+        "session-persistence"
+      ],
+      "user_flows": [
+        "swatch-detour",
+        "order-now"
+      ],
+      "screens_affected": [
+        "path-1-step-3.html",
+        "path-1-return-step-1.html",
+        "path-2-step-3.html"
+      ],
+      "tags": [
+        "user-request",
+        "session-management",
+        "conversion-optimization"
+      ]
+    },
+    {
+      "id": "DEC-005",
+      "date": "2026-04-22",
+      "title": "Request measurements before contact information",
+      "context": "Deciding order of personal information collection.",
+      "decision": "Collect body measurements before shipping address and contact details",
+      "rationale": "Measurements are product-specific and feel like customization (positive). Address feels more personal/private. Build from product to personal.",
+      "alternatives": [
+        "Contact info first",
+        "Combined form",
+        "Address before measurements"
+      ],
+      "consequences": "Users engage with product customization before feeling transaction pressure. May increase abandonment at address step but improves quality of completions.",
+      "design_patterns": [
+        "progressive-disclosure",
+        "customization-first"
+      ],
+      "user_flows": [
+        "swatch-detour",
+        "order-now"
+      ],
+      "screens_affected": [
+        "path-1-return-step-3.html",
+        "path-2-step-2.html"
+      ],
+      "tags": [
+        "information-architecture",
+        "privacy",
+        "customization"
+      ]
+    },
+    {
+      "id": "DEC-006",
+      "date": "2026-04-22",
+      "title": "Limit swatch selection to 5",
+      "context": "Needed to manage costs and prevent decision paralysis with too many swatches.",
+      "decision": "Maximum 5 swatches per order with real-time counter and disabled checkboxes at limit",
+      "rationale": "Manages shipping costs. Prevents decision paralysis. Creates constraint that aids decision-making. 5 is enough for comparison.",
+      "alternatives": [
+        "Unlimited swatches",
+        "Tiered pricing by quantity",
+        "3 swatch limit",
+        "Soft limit with warning"
+      ],
+      "consequences": "Clear expectations. Encourages thoughtful selection. May frustrate users wanting more options. Reduces operational costs.",
+      "design_patterns": [
+        "constrained-choice",
+        "real-time-feedback"
+      ],
+      "user_flows": [
+        "swatch-detour"
+      ],
+      "screens_affected": [
+        "path-1-step-2.html"
+      ],
+      "tags": [
+        "business-constraint",
+        "ux-optimization",
+        "decision-support"
+      ]
+    },
+    {
+      "id": "DEC-007",
+      "date": "2026-04-22",
+      "title": "Tiered swatch delivery pricing",
+      "context": "User requested: 'We should have a dropdown where she can have overnight $20, 2-3 days $15, 5 days $8'",
+      "decision": "Three delivery tiers: Overnight ($20), 2-3 days ($15), 5 days ($8)",
+      "rationale": "User choice between speed and cost. Premium pricing for overnight offsets costs. Most users likely choose middle tier.",
+      "alternatives": [
+        "Free shipping (one speed)",
+        "Flat rate shipping",
+        "Two tiers only"
+      ],
+      "consequences": "Added complexity to checkout. Revenue from shipping. Clear value proposition for each tier. Manages rush order expectations.",
+      "design_patterns": [
+        "tiered-pricing",
+        "user-choice",
+        "expectation-setting"
+      ],
+      "user_flows": [
+        "swatch-detour"
+      ],
+      "screens_affected": [
+        "path-1-step-3-payment.html"
+      ],
+      "tags": [
+        "user-request",
+        "pricing",
+        "shipping"
+      ]
+    },
+    {
+      "id": "DEC-008",
+      "date": "2026-04-22",
+      "title": "Offer 5% discount for swatch orders",
+      "context": "Wanted to incentivize users who ordered swatches to complete their dress order.",
+      "decision": "Give 5% discount on final dress order for users who ordered swatches",
+      "rationale": "Rewards users who invested in swatches. Acknowledges their commitment. Encourages order completion. Creates positive surprise.",
+      "alternatives": [
+        "No discount",
+        "Free shipping instead",
+        "Flat dollar amount off",
+        "Tiered discounts by swatch spend"
+      ],
+      "consequences": "Reduces margin slightly ($42.50 on $850 order). Increases conversion likelihood. Creates loyalty. May set discount expectations.",
+      "design_patterns": [
+        "incentive-alignment",
+        "reward-engagement",
+        "conversion-optimization"
+      ],
+      "user_flows": [
+        "swatch-detour"
+      ],
+      "screens_affected": [
+        "path-1-return-step-4.html"
+      ],
+      "tags": [
+        "pricing",
+        "conversion-optimization",
+        "customer-loyalty"
+      ]
+    },
+    {
+      "id": "DEC-009",
+      "date": "2026-04-22",
+      "title": "Split payment from shipping screen",
+      "context": "User requested: 'I think we should have a separate screen for payment methods'",
+      "decision": "Create separate screen for payment methods instead of combining with shipping",
+      "rationale": "Better focus on each task. Reduced cognitive load. Clearer action hierarchy. Shipping and payment are conceptually distinct.",
+      "alternatives": [
+        "Combined form",
+        "Accordion sections on one screen",
+        "Tabbed interface",
+        "Payment in modal"
+      ],
+      "consequences": "Added one screen to flow. Improved completion rate expected. Clearer error handling. May feel longer to some users.",
+      "design_patterns": [
+        "progressive-disclosure",
+        "single-purpose-screen",
+        "chunking"
+      ],
+      "user_flows": [
+        "swatch-detour"
+      ],
+      "screens_affected": [
+        "path-1-step-3.html",
+        "path-1-step-3-payment.html"
+      ],
+      "tags": [
+        "user-request",
+        "information-architecture",
+        "payment",
+        "form-design"
+      ]
+    },
+    {
+      "id": "DEC-010",
+      "date": "2026-04-22",
+      "title": "Session persistence for return flow",
+      "context": "User wanted swatch path to resume where customer left off, not start over.",
+      "decision": "Return flow pre-fills selections and resumes at fabric choice from received swatches",
+      "rationale": "Respects user's previous work. Reduces friction. Creates seamless experience. Shows system remembers them.",
+      "alternatives": [
+        "Start from beginning",
+        "Email link to any step",
+        "Partial prefill only",
+        "Account required for persistence"
+      ],
+      "consequences": "Requires session management. Cookie/email-based retrieval. Better UX. Increased technical complexity.",
+      "design_patterns": [
+        "session-persistence",
+        "respect-user-work",
+        "seamless-resumption"
+      ],
+      "user_flows": [
+        "swatch-detour"
+      ],
+      "screens_affected": [
+        "path-1-return-step-1.html",
+        "path-1-return-step-2.html"
+      ],
+      "tags": [
+        "user-request",
+        "session-management",
+        "ux-optimization"
+      ]
+    },
+    {
+      "id": "DEC-011",
+      "date": "2026-04-22",
+      "title": "Button hierarchy on swatch confirmation",
+      "context": "User feedback: 'The Continue to Order Now button is too prominent'",
+      "decision": "Make 'Done' primary button, demote 'Continue to order now' to small link under 'Changed your mind?'",
+      "rationale": "Primary action should be completing current task (Done). Continuing to order is secondary option. Hierarchy reflects user intent priority.",
+      "alternatives": [
+        "Both as primary buttons",
+        "Continue as secondary button",
+        "Hide continue option",
+        "Modal for continue option"
+      ],
+      "consequences": "Fewer users may continue to order immediately. Those who do are more intentional. Clearer completion of swatch task.",
+      "design_patterns": [
+        "button-hierarchy",
+        "primary-secondary-actions",
+        "intentional-friction"
+      ],
+      "user_flows": [
+        "swatch-detour"
+      ],
+      "screens_affected": [
+        "path-1-step-4.html"
+      ],
+      "tags": [
+        "user-feedback",
+        "visual-hierarchy",
+        "conversion-optimization"
+      ]
+    },
+    {
+      "id": "DEC-012",
+      "date": "2026-04-22",
+      "title": "Consistent navigation positioning",
+      "context": "User: 'The back to all scenarios is showing up in different places on each prototype screen'",
+      "decision": "Position 'Back to all scenarios' link at bottom of page, outside white box, left-aligned to box edge on all screens",
+      "rationale": "Consistency improves usability. Bottom position doesn't compete with primary actions. Outside box shows it's meta-navigation.",
+      "alternatives": [
+        "Top of page",
+        "Inside white box",
+        "Right-aligned",
+        "Hamburger menu"
+      ],
+      "consequences": "Requires scrolling to access. Clear visual hierarchy. Consistent muscle memory. Easy to find when needed.",
+      "design_patterns": [
+        "consistent-navigation",
+        "visual-hierarchy",
+        "meta-navigation"
+      ],
+      "user_flows": [
+        "swatch-detour",
+        "order-now"
+      ],
+      "screens_affected": [
+        "index.html",
+        "path-1-step-2.html",
+        "path-1-step-3.html",
+        "path-1-step-3-payment.html",
+        "path-1-step-4.html",
+        "path-1-return-step-1.html",
+        "path-1-return-step-2.html",
+        "path-1-return-step-3.html",
+        "path-1-return-step-4.html",
+        "path-1-return-step-5.html",
+        "path-2-step-1.html",
+        "path-2-step-2.html",
+        "path-2-step-3.html",
+        "path-2-step-4.html",
+        "path-2-step-5.html"
+      ],
+      "tags": [
+        "user-feedback",
+        "navigation",
+        "consistency",
+        "visual-hierarchy"
+      ]
+    },
+    {
+      "id": "DEC-013",
+      "date": "2026-04-22",
+      "title": "Placeholder dress image with dynamic update messaging",
+      "context": "Needed visual representation of dress without actual product images.",
+      "decision": "Gray placeholder with text 'Dress image (updates as you choose)'",
+      "rationale": "Sets expectation for dynamic updates. Placeholder doesn't mislead. Future implementation clear. Sticky positioning keeps it visible.",
+      "alternatives": [
+        "Generic dress illustration",
+        "No image placeholder",
+        "Stock photo",
+        "Wireframe sketch"
+      ],
+      "consequences": "Doesn't show actual dress. Sets future feature expectation. Keeps layout intact for when images added. Clear communication.",
+      "design_patterns": [
+        "placeholder-pattern",
+        "expectation-setting",
+        "future-proofing"
+      ],
+      "user_flows": [
+        "swatch-detour",
+        "order-now"
+      ],
+      "screens_affected": [
+        "index.html",
+        "path-1-step-2.html",
+        "path-1-return-step-2.html",
+        "path-2-step-1.html"
+      ],
+      "tags": [
+        "visual-design",
+        "prototyping",
+        "communication"
+      ]
+    },
+    {
+      "id": "DEC-014",
+      "date": "2026-04-22",
+      "title": "Measurements drawer for review screen",
+      "context": "Payment screen needed to show measurements for review without cluttering layout.",
+      "decision": "Slide-in drawer from right with 'View' link, overlays page with backdrop",
+      "rationale": "Keeps payment screen focused. Measurements available on-demand. Familiar mobile pattern. Easy to implement and use.",
+      "alternatives": [
+        "Accordion section",
+        "Modal dialog",
+        "Always visible summary",
+        "Separate review screen"
+      ],
+      "consequences": "Requires JavaScript. May be missed by some users. Mobile-friendly pattern. Keeps focus on payment completion.",
+      "design_patterns": [
+        "progressive-disclosure",
+        "drawer-pattern",
+        "on-demand-detail"
+      ],
+      "user_flows": [
+        "swatch-detour",
+        "order-now"
+      ],
+      "screens_affected": [
+        "path-1-return-step-4.html",
+        "path-2-step-4.html"
+      ],
+      "tags": [
+        "interaction-design",
+        "review-flow",
+        "information-architecture"
+      ]
+    },
+    {
+      "id": "DEC-015",
+      "date": "2026-04-22",
+      "title": "Radio buttons for final fabric choice, checkboxes for swatches",
+      "context": "Different selection patterns needed for swatch selection vs final fabric choice.",
+      "decision": "Checkboxes with 5-limit for swatches, radio buttons for single fabric choice",
+      "rationale": "Checkboxes signal multiple selection. Radio buttons signal single choice. Matches user mental model and prevents errors.",
+      "alternatives": [
+        "Radio buttons throughout",
+        "Checkboxes throughout with limit=1 for final",
+        "Dropdown for final selection",
+        "Visual cards instead"
+      ],
+      "consequences": "Clear affordances. Prevents selection errors. Familiar patterns. May need explanation for swatch limit behavior.",
+      "design_patterns": [
+        "appropriate-input-type",
+        "affordance-matching-behavior",
+        "error-prevention"
+      ],
+      "user_flows": [
+        "swatch-detour",
+        "order-now"
+      ],
+      "screens_affected": [
+        "path-1-step-2.html",
+        "path-1-return-step-2.html",
+        "path-2-step-1.html"
+      ],
+      "tags": [
+        "form-design",
+        "interaction-design",
+        "usability"
+      ]
+    }
+  ]
+}
