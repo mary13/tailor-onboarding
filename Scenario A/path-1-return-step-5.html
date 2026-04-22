@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmed</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen flex items-center justify-center p-4">
+    <div class="bg-white rounded-lg shadow-lg p-8 max-w-lg w-full">
+        <!-- Success header -->
+        <div class="text-center mb-6">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-emerald-100 rounded-full mb-4">
+                <svg class="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+            </div>
+            <h1 class="text-2xl font-semibold text-slate-900 mb-2">
+                Your dress is confirmed
+            </h1>
+            <p class="text-lg text-slate-600">Order #BD-47291</p>
+        </div>
+
+        <!-- Email confirmation -->
+        <div class="bg-slate-50 border border-slate-200 rounded-md p-4 mb-6">
+            <p class="text-sm text-slate-700">
+                We'll send updates to:
+                <span class="font-medium text-slate-900 block mt-1">sarah@email.com</span>
+            </p>
+        </div>
+
+        <div class="border-t border-slate-200 pt-6 mb-6">
+            <h2 class="font-medium text-slate-900 mb-4">What happens next?</h2>
+
+            <div class="space-y-3 mb-4">
+                <div class="flex gap-3">
+                    <div class="text-sm font-medium text-slate-900 w-20">Week 1-2:</div>
+                    <div class="text-sm text-slate-600">We'll create your dress</div>
+                </div>
+                <div class="flex gap-3">
+                    <div class="text-sm font-medium text-slate-900 w-20">Week 3:</div>
+                    <div class="text-sm text-slate-600">Quality check & finishing</div>
+                </div>
+                <div class="flex gap-3">
+                    <div class="text-sm font-medium text-slate-900 w-20">Week 4:</div>
+                    <div class="text-sm text-slate-600">Ships to you</div>
+                </div>
+            </div>
+
+            <div class="bg-slate-50 border border-slate-200 rounded-md p-3">
+                <p class="text-sm text-slate-700">
+                    <span class="font-medium">Estimated delivery:</span> June 15, 2026
+                </p>
+            </div>
+        </div>
+
+        <div class="border-t border-slate-200 pt-6 mb-6">
+            <h2 class="font-medium text-slate-900 mb-3">Your order</h2>
+            <div class="text-sm space-y-2">
+                <p class="text-slate-600">Silk charmeuse, navy</p>
+                <p class="text-slate-600">Custom fit</p>
+                <p class="text-slate-600">Shipping to: 847 Pine St...</p>
+            </div>
+        </div>
+
+        <!-- Support -->
+        <div class="bg-slate-50 border border-slate-200 rounded-md p-4 mb-6">
+            <p class="text-sm text-slate-700">
+                Questions? Email <a href="mailto:help@tailor.com" class="text-slate-900 underline hover:text-slate-700">help@tailor.com</a>
+            </p>
+        </div>
+
+        <!-- Done button -->
+        <a href="index.html"
+           class="block w-full bg-slate-900 hover:bg-slate-800 text-white font-medium py-3 px-4 rounded-md transition-colors text-center">
+            Done
+        </a>
+    </div>
+</body>
+</html>

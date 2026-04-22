@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Fabric</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen p-8">
+    <div class="max-w-6xl mx-auto">
+        <div class="bg-white rounded-lg shadow-lg p-8">
+            <h1 class="text-2xl font-semibold text-slate-900 mb-6">
+                Choose your fabric
+            </h1>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Dress preview -->
+                <div>
+                    <div class="bg-slate-200 rounded-md h-96 sticky top-8 flex items-center justify-center">
+                        <div class="text-center">
+                            <span class="text-slate-400 text-sm block mb-2">Dress image</span>
+                            <span class="text-slate-400 text-sm">(updates as you choose)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fabric selection -->
+                <div class="space-y-6">
+                    <!-- Silk charmeuse -->
+                    <div>
+                        <h3 class="font-medium text-slate-900 mb-2">Silk charmeuse</h3>
+                        <p class="text-sm text-slate-600 mb-3">Luxe drape, subtle sheen</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="radio" name="fabric" value="silk-charmeuse-navy"
+                                       class="w-4 h-4 text-slate-900 focus:ring-slate-900">
+                                <span class="text-sm text-slate-700">Navy solid</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="radio" name="fabric" value="silk-charmeuse-blush"
+                                       class="w-4 h-4 text-slate-900 focus:ring-slate-900">
+                                <span class="text-sm text-slate-700">Blush solid</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="radio" name="fabric" value="silk-charmeuse-emerald"
+                                       class="w-4 h-4 text-slate-900 focus:ring-slate-900">
+                                <span class="text-sm text-slate-700">Emerald</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="radio" name="fabric" value="silk-charmeuse-black"
+                                       class="w-4 h-4 text-slate-900 focus:ring-slate-900">
+                                <span class="text-sm text-slate-700">Black</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Silk crepe -->
+                    <div>
+                        <h3 class="font-medium text-slate-900 mb-2">Silk crepe</h3>
+                        <p class="text-sm text-slate-600 mb-3">Matte finish, fluid movement</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="radio" name="fabric" value="silk-crepe-ivory"
+                                       class="w-4 h-4 text-slate-900 focus:ring-slate-900">
+                                <span class="text-sm text-slate-700">Ivory</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="radio" name="fabric" value="silk-crepe-burgundy"
+                                       class="w-4 h-4 text-slate-900 focus:ring-slate-900">
+                                <span class="text-sm text-slate-700">Burgundy</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="radio" name="fabric" value="silk-crepe-slate"
+                                       class="w-4 h-4 text-slate-900 focus:ring-slate-900">
+                                <span class="text-sm text-slate-700">Slate</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="radio" name="fabric" value="silk-crepe-champagne"
+                                       class="w-4 h-4 text-slate-900 focus:ring-slate-900">
+                                <span class="text-sm text-slate-700">Champagne</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Cotton sateen -->
+                    <div>
+                        <h3 class="font-medium text-slate-900 mb-2">Cotton sateen</h3>
+                        <p class="text-sm text-slate-600 mb-3">Crisp structure, natural feel</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="radio" name="fabric" value="cotton-sateen-white"
+                                       class="w-4 h-4 text-slate-900 focus:ring-slate-900">
+                                <span class="text-sm text-slate-700">White</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="radio" name="fabric" value="cotton-sateen-coral"
+                                       class="w-4 h-4 text-slate-900 focus:ring-slate-900">
+                                <span class="text-sm text-slate-700">Coral</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="radio" name="fabric" value="cotton-sateen-sage"
+                                       class="w-4 h-4 text-slate-900 focus:ring-slate-900">
+                                <span class="text-sm text-slate-700">Sage</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="radio" name="fabric" value="cotton-sateen-navy-stripe"
+                                       class="w-4 h-4 text-slate-900 focus:ring-slate-900">
+                                <span class="text-sm text-slate-700">Navy stripe</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Linen blend -->
+                    <div>
+                        <h3 class="font-medium text-slate-900 mb-2">Linen blend</h3>
+                        <p class="text-sm text-slate-600 mb-3">Textured, breathable</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="radio" name="fabric" value="linen-blend-natural"
+                                       class="w-4 h-4 text-slate-900 focus:ring-slate-900">
+                                <span class="text-sm text-slate-700">Natural</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="radio" name="fabric" value="linen-blend-terracotta"
+                                       class="w-4 h-4 text-slate-900 focus:ring-slate-900">
+                                <span class="text-sm text-slate-700">Terracotta</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="radio" name="fabric" value="linen-blend-denim"
+                                       class="w-4 h-4 text-slate-900 focus:ring-slate-900">
+                                <span class="text-sm text-slate-700">Denim</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="radio" name="fabric" value="linen-blend-charcoal"
+                                       class="w-4 h-4 text-slate-900 focus:ring-slate-900">
+                                <span class="text-sm text-slate-700">Charcoal</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Wool crepe -->
+                    <div>
+                        <h3 class="font-medium text-slate-900 mb-2">Wool crepe</h3>
+                        <p class="text-sm text-slate-600 mb-3">Year-round weight, holds shape</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="radio" name="fabric" value="wool-crepe-camel"
+                                       class="w-4 h-4 text-slate-900 focus:ring-slate-900">
+                                <span class="text-sm text-slate-700">Camel</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="radio" name="fabric" value="wool-crepe-forest"
+                                       class="w-4 h-4 text-slate-900 focus:ring-slate-900">
+                                <span class="text-sm text-slate-700">Forest</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="radio" name="fabric" value="wool-crepe-plum"
+                                       class="w-4 h-4 text-slate-900 focus:ring-slate-900">
+                                <span class="text-sm text-slate-700">Plum</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="radio" name="fabric" value="wool-crepe-gray"
+                                       class="w-4 h-4 text-slate-900 focus:ring-slate-900">
+                                <span class="text-sm text-slate-700">Gray</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="pt-6 border-t border-slate-200 space-y-3">
+                        <a href="path-2-step-2.html"
+                           class="block w-full bg-slate-900 hover:bg-slate-800 text-white font-medium py-3 px-4 rounded-md transition-colors text-center">
+                            Continue
+                        </a>
+                        <a href="index.html"
+                           class="block w-full text-slate-600 hover:text-slate-900 font-medium py-3 px-4 transition-colors text-center">
+                            Cancel
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
